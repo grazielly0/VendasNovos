@@ -7,7 +7,7 @@
             <th>Produto</th>
             <th>Quantidade</th>
             <th>Categoria</th>
-            <th>Data Válidade</th>
+            <th>Data Validade</th>
             <th>Preço</th>
            
         </tr>
@@ -17,11 +17,10 @@
     @foreach($ids as $id)
     <tr>
     <th>{{$id->id}}</th>
-    <th>{{$id->codigo}}</th>
     <th>{{$id->produto}}</th>
     <th>{{$id->quantidade}}</th>
     <th>{{$id->categoria}}</th>
-    <th>{{$id->dataValidade}}</th>
+    <th>{{$id->dataValiade}}</th>
     <th>{{$id->preco}}</th>
     <th>
 

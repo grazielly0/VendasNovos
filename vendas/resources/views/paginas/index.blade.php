@@ -3,5 +3,6 @@
 
 <a href="/Cadastrar"><button>Cadastrar</buttton></a>
 
-<a href="/Consultar"><button>Consultar</buttton></a>
+<a href="/consultar"><button>Consultar</buttton></a>
 </x-layout>
+

@@ -14,19 +14,19 @@ class ControllerVendas extends Controller
     
     
     public function store(Request $request){
-        $codigo = $request->input('password');
-        $produto = $request->input('produtoTexto');
-        $quantidade = $request->input('estoque');
+        $codigo = $request->input('id');
+        $produto = $request->input('produto');
+        $quantidade = $request->input('quantidade');
         $categoria = $request->input('categoria');
-        $dataValidade = $request->input('dataValidade');
+        $dataValiade = $request->input('dataValiade');
         $preco = $request->input('preco');
             //Inserindo os dads na tabela 
         $model = new modelVendas();
-        $model->password = $codigo;
-        $model->produtoTexto = $produto;
-        $model->estoque = $estoque;
+        $model->id = $codigo;
+        $model->produto = $produto;
+        $model->quantidade = $quantidade;
         $model->categoria = $categoria;
-        $model->dataValidade = $dataValidade;
+        $model->dataValiade = $dataValiade;
         $model->preco = $preco;
     
         $model->save();//armazenar no banco de dados 
@@ -40,17 +40,20 @@ class ControllerVendas extends Controller
     }
  
     public function editar($id){
-            $dado = modelVendas::findOrFail($id);
-            return view('paginas.editar', compact('dado'));
-    }
- 
-    public function atualizar(Request $request, $id){
+        $dado = modelVendas::findOrFail($id);
+        return view('paginas.editar', compact('dado'));
+    }//fim do método
+
+
+    public function atualizar(Request $request, $id)
+    {
         modelVendas::where('id',$id)->update($request->all());
         return redirect('/consultar');
-    }
- 
-    public function excluir(Request $request, $id){
+    }//fim do método atualizar
+
+    public function excluir(Request $request, $id)
+    {
         modelVendas::where('id', $id)->delete($request->all());
         return redirect('/consultar');
-    }
+    }//fim do método
 }

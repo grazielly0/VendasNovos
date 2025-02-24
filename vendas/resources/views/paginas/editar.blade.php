@@ -1,24 +1,29 @@
 <x-layout titulo="editar">
-    <form action="" method="get">
-        <label>Código</label>
-        <input type="number" id="number" value="" disabled require/>
+    <form action="/atualizar/{{$dado->id}}" method="get">
+       
+        <label>Id<label>
+        <input type="text" name="id" value="{{$dado->id}}"  require/>
+
+  
         
         <label>Produto<label>
-        <input type="text" name="produtoTexto" value=""  require/>
-        <br><br>
+        <input type="text" name="produto" value="{{$dado->produto}}"  require/>
+
 
         
         <label>Quantidade<label>
-        <input type="number" name="estoque" value=""  require/>
-        <br><br>
+        <input type="number" name="quantidade" value="{{$dado->quantidade}}"  require/>
+
 
 
         <label>Categoria<label>
-        <input type="text" name="categoriaTexto" value=""  require/>
+        <input type="text" name="categoria" value="{{$dado->categoria}}"  require/>
 
-        <label>Data Válidade<label>
-        <input type="date" name="dataValidade" value=""  require/>
-        <br><br>
+        <label>Data Validade<label>
+        <input type="date" name="dataValiade" value="{{$dado->dataValiade}}"  require/>
+ 
+        <label>Preço<label>
+        <input type="text" name="preco" value="{{$dado->preco}}"  require/>
 
         <button type="submit">Atualizar</button>
     </form>
@@ -34,15 +39,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Tem certeza que deseja excluir: ?
+        Tem certeza que deseja excluir: {{$dado->id}}?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <a type="button" class="btn btn-primary" href="/excluir/">Sim</a>
+        <a type="button" class="btn btn-primary" href="/excluir/{{$dado->id}}">Sim</a>
       </div>
     </div>
   </div>

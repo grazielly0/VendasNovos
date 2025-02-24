@@ -12,9 +12,7 @@ Route::get('/Cadastrar', function () {
 });
 
 
-Route::get('/Consultar', function () {
-    return view('paginas.Consultar');
-});
+
 
 
 Route::get('/editar', function () {
@@ -22,4 +20,14 @@ Route::get('/editar', function () {
 });
 
 
-Route::get('/cadastrar/salvar',[App\Http\Controllers\registrarAtividadeController::class, 'store']);
+route::get('/cadastrar/salvar',[App\Http\Controllers\ControllerVendas::class,'store']);
+ 
+route::get('/consultar',[App\Http\Controllers\ControllerVendas::class,'consultar']);
+ 
+route::get('/editar/{id}',[App\Http\Controllers\ControllerVendas::class,'editar']);
+ 
+route::get('/atualizar/{id}',[App\Http\Controllers\ControllerVendas::class,'atualizar']);
+ 
+route::get('/excluir/{id}',[App\Http\Controllers\ControllerVendas::class,'excluir']);
+ 
+ 
